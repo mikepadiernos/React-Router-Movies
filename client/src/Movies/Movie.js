@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Movie = (props) => {
-  console.log("props", props);
+  console.log("id", props.match.params.id);
   const [movie, setMovie] = useState();
   console.log(movie);
   useEffect(() => {
-    const id = 1;
+    const id = props.match.params.id;
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -53,6 +53,6 @@ const Movie = (props) => {
       <div className="save-button">Save</div>
     </div>
   );
-}
+};
 
 export default Movie;
