@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Movie = (props) => {
-
-  const [movie, setMovie] = useState([]);
- 
+  console.log("props", props);
+  const [movie, setMovie] = useState();
+  console.log(movie);
   useEffect(() => {
     const id = 1;
     // change ^^^ that line and grab the id from the URL
@@ -14,7 +14,6 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
-          console.log('movie', setMovie);
         })
         .catch(error => {
           console.error(error);
